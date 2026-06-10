@@ -125,5 +125,18 @@ QList<QPair<QString, QString> > Translator::loadTranslationFiles()
 
 QString Translator::currentLanguage()
 {
-    return language;
+    const QString savedLanguage = IniSettings::language();
+
+    if (savedLanguage == "English") {
+        return QStringLiteral("English");
+    }
+
+    const QList<QPair<QString, QString> > languages = loadTranslationFiles();
+    for (int i = 0; i < languages.count(); ++i) {
+        if (languages.at(i).first == savedLanguage) {
+            return languages.at(i).second;
+        }
+    }
+
+    return QStringLiteral("English");
 }

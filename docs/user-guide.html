@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LessMB 使用指南</title>
+  <style>
+    :root {
+      --bg: #f6f7f9;
+      --card: #ffffff;
+      --text: #1a1d21;
+      --muted: #5c6570;
+      --accent: #2563eb;
+      --accent-soft: #eff6ff;
+      --border: #e2e8f0;
+      --code-bg: #f1f5f9;
+      --warn-bg: #fffbeb;
+      --warn-border: #f59e0b;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 15px;
+    }
+    .layout {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      max-width: 1100px;
+      margin: 0 auto;
+      min-height: 100vh;
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      align-self: start;
+      padding: 2rem 1.25rem 2rem 1.5rem;
+      border-right: 1px solid var(--border);
+      background: var(--card);
+      height: 100vh;
+      overflow-y: auto;
+    }
+    nav h2 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+    nav ul { list-style: none; }
+    nav li { margin-bottom: 0.35rem; }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: block;
+      padding: 0.2rem 0;
+    }
+    nav a:hover { color: var(--accent); }
+    main {
+      padding: 2.5rem 2.5rem 4rem;
+      max-width: 780px;
+    }
+    header.hero {
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    header.hero h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+    header.hero .meta {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    header.hero .tagline {
+      margin-top: 0.75rem;
+      color: var(--muted);
+    }
+    section { margin-bottom: 2.5rem; }
+    h2 {
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      padding-top: 0.5rem;
+    }
+    h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.25rem 0 0.5rem;
+    }
+    p { margin-bottom: 0.75rem; }
+    ul, ol {
+      margin: 0 0 0.75rem 1.25rem;
+    }
+    li { margin-bottom: 0.35rem; }
+    code, kbd {
+      font-family: "SF Mono", "Cascadia Code", Consolas, monospace;
+      font-size: 0.85em;
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.1em 0.35em;
+    }
+    kbd { font-size: 0.8em; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0.75rem 0 1rem;
+      font-size: 0.9rem;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 0.5rem 0.75rem;
+      text-align: left;
+    }
+    th { background: var(--code-bg); font-weight: 600; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin: 0.75rem 0;
+    }
+    .warn {
+      background: var(--warn-bg);
+      border-left: 4px solid var(--warn-border);
+      padding: 0.75rem 1rem;
+      border-radius: 0 6px 6px 0;
+      margin: 0.75rem 0;
+      font-size: 0.92rem;
+    }
+    .tree {
+      font-family: "SF Mono", Consolas, monospace;
+      font-size: 0.82rem;
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1rem 1.25rem;
+      line-height: 1.5;
+      overflow-x: auto;
+      white-space: pre;
+    }
+    .footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    @media (max-width: 768px) {
+      .layout { grid-template-columns: 1fr; }
+      nav {
+        position: static;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+      main { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="layout">
+  <nav>
+    <h2>目录</h2>
+    <ul>
+      <li><a href="#intro">简介</a></li>
+      <li><a href="#install">安装与运行</a></li>
+      <li><a href="#structure">目录结构</a></li>
+      <li><a href="#language">切换语言</a></li>
+      <li><a href="#import">导入图像</a></li>
+      <li><a href="#convert">格式转换</a></li>
+      <li><a href="#actions">操作面板</a></li>
+      <li><a href="#output">输出设置</a></li>
+      <li><a href="#overwrite">文件覆盖</a></li>
+      <li><a href="#pdf">PDF 转换</a></li>
+      <li><a href="#convert-run">开始转换</a></li>
+      <li><a href="#cli">命令行</a></li>
+      <li><a href="#shortcuts">快捷键</a></li>
+      <li><a href="#faq">常见问题</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <header class="hero">
+      <h1>LessMB 使用指南</h1>
+      <p class="meta">版本 1.0.0 · Windows 64 位便携版</p>
+      <p class="tagline">LessMB 是一款批量图像压缩与转换工具。支持超过 100 种不同格式图像的缩放与转换。</p>
+    </header>
+
+    <section id="intro">
+      <h2>简介</h2>
+      <p>LessMB 基于 ImageMagick 引擎，可一次性处理大量图像：转换格式、调整尺寸与分辨率、旋转翻转、批量重命名输出等。主程序为 <code>lessmb.exe</code>，无需安装即可解压使用。</p>
+      <p>本指南中的界面用语与软件内简体中文翻译保持一致，便于对照操作。</p>
+    </section>
+
+    <section id="install">
+      <h2>安装与运行</h2>
+      <ol>
+        <li>解压发布包 <code>LessMB-1.0.0-win64.zip</code> 到任意目录（建议路径不含中文或特殊字符）。</li>
+        <li>进入解压后的文件夹，双击 <code>lessmb.exe</code> 启动。</li>
+        <li>首次运行会自动创建配置文件；若在同目录下存在可写的 <code>settings</code> 文件夹，则使用便携模式保存设置。</li>
+      </ol>
+      <div class="warn">
+        请保持 <code>lessmb.exe</code> 与 <code>loc/</code>、<code>modules/</code> 等依赖文件在同一目录，不要单独移动可执行文件。
+      </div>
+    </section>
+
+    <section id="structure">
+      <h2>便携版目录结构</h2>
+      <div class="tree">LessMB-1.0.0-win64/
+├── lessmb.exe          # 主程序
+├── lessmb.ico          # 程序图标
+├── loc/
+│   └── converseen_zh_CN.qm   # 简体中文语言包
+├── modules/            # ImageMagick 编解码模块
+├── imageformats/       # Qt 图像插件
+├── platforms/          # Qt 平台插件
+├── settings/           # （可选）便携模式配置目录
+│   └── .lessmb.conf    # 用户设置
+└── …                   # Qt 与 ImageMagick 运行库</div>
+      <p>若未使用便携模式，配置文件保存在用户目录：<code>%APPDATA%\lessmb\.lessmb.conf</code>。</p>
+    </section>
+
+    <section id="language">
+      <h2>界面语言</h2>
+      <p>LessMB <strong>首次运行默认使用简体中文</strong>。语言文件位于 <code>loc/converseen_zh_CN.qm</code>，请勿删除。</p>
+      <p>如需改为英文或其他语言：</p>
+      <ol>
+        <li>打开 <strong>文件 → 设置</strong>。</li>
+        <li>在 <strong>语言</strong> 中选择目标语言。</li>
+        <li>点击 <strong>确定</strong> 并按提示 <strong>重新启动 LessMB</strong>。</li>
+      </ol>
+    </section>
+
+    <section id="import">
+      <h2>导入图像</h2>
+      <p>通过菜单 <strong>文件</strong> 或工具栏可将图像加入待处理列表：</p>
+      <table>
+        <thead>
+          <tr><th>操作</th><th>说明</th><th>快捷键</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>打开图像</td><td>打开文件选择框，导入图像（替换当前列表）</td><td><kbd>Ctrl+O</kbd></td></tr>
+          <tr><td>添加图像</td><td>在现有列表基础上追加图像</td><td><kbd>Ctrl+Alt+O</kbd></td></tr>
+          <tr><td>导入目录</td><td>扫描文件夹内所有支持的图像；可询问是否包含子文件夹</td><td>—</td></tr>
+          <tr><td>导入 PDF 文件</td><td>将 PDF 各页作为图像导入（需 Ghostscript，见下文）</td><td>—</td></tr>
+          <tr><td>导入 Windows 图标文件</td><td>导入 <code>*.ico</code> / <code>*.icon</code> 中的子图像</td><td>—</td></tr>
+        </tbody>
+      </table>
+
+      <h3>多页文档</h3>
+      <p>导入 PDF、ICO 等多页文件时，会弹出 <strong>导入多页文档</strong> 对话框。勾选要导入的页或子图像，可使用 <strong>全部勾选</strong> / <strong>全部取消勾选</strong>，确认后点击 <strong>导入</strong>。</p>
+
+      <h3>图像列表</h3>
+      <p>主窗口列表显示：待转换、状态、文件名、图像格式、图像大小、分辨率、大小、路径等列。只有勾选了 <strong>待转换</strong> 的图像才会参与批量处理。</p>
+      <ul>
+        <li><strong>勾选</strong> / <strong>取消勾选</strong>：作用于当前选中项</li>
+        <li><strong>全部勾选</strong> / <strong>全部取消勾选</strong>：作用于全部项目</li>
+        <li><strong>反转已勾选项目</strong>：<kbd>Ctrl+I</kbd></li>
+        <li><strong>移除图像</strong> / <strong>清空列表</strong>：从列表中删除</li>
+      </ul>
+    </section>
+
+    <section id="convert">
+      <h2>格式转换与图像设置</h2>
+      <h3>格式转换</h3>
+      <p>在 <strong>格式转换</strong> 区域，从 <strong>转换为：</strong> 下拉框选择目标格式。选择 <strong>不更改格式</strong> 则仅执行缩放等操作而不改变文件类型。</p>
+      <p>若输出格式不支持写入，转换时会提示错误并跳过该文件。</p>
+
+      <h3>图像设置</h3>
+      <p>点击 <strong>图像设置</strong> 按钮打开对话框，可调整：</p>
+      <ul>
+        <li><strong>Jpeg 压缩等级</strong>：质量 1–100（1 压缩率最高、100 质量最好）</li>
+        <li><strong>Png/Mng 压缩级别</strong>：质量 0–9（PNG 为无损压缩，提高级别不会降低画质）</li>
+        <li><strong>WebP</strong>：无损压缩、压缩方法、质量、抖动等</li>
+        <li><strong>插值</strong>：缩放时使用的滤波器</li>
+        <li><strong>删除图像的元数据</strong>：输出时去除 EXIF 等元数据以减小体积</li>
+      </ul>
+
+      <h3>透明背景</h3>
+      <p>勾选 <strong>替换透明背景</strong> 并 <strong>选择颜色</strong>，可将 PNG/WebP 等格式的透明区域替换为指定背景色（常用于输出 JPEG）。</p>
+    </section>
+
+    <section id="actions">
+      <h2>操作面板</h2>
+      <p>通过菜单 <strong>操作 → 操作面板</strong> 显示或隐藏右侧操作区。选中列表中的图像后，可在此预览并设置变换参数。</p>
+
+      <h3>预览</h3>
+      <p>勾选 <strong>显示预览</strong> 可实时查看效果。预览区显示图像格式、文件大小、图像尺寸、分辨率等信息。</p>
+
+      <h3>缩放</h3>
+      <p>勾选 <strong>缩放</strong> 后设置 <strong>宽度</strong> 与 <strong>高度</strong>：</p>
+      <ul>
+        <li>单位可在 <strong>px</strong>（像素）与 <strong>%</strong>（相对原图百分比）之间切换</li>
+        <li><strong>保持纵横比</strong>：按比例缩放，避免变形</li>
+        <li>将一边设为 <strong>0</strong> 可只固定另一边，另一边自动计算（如高度 800、宽度 0 → 高度固定 800 像素，宽度按比例计算）</li>
+      </ul>
+
+      <h3>分辨率</h3>
+      <p>勾选后可设置 <strong>水平分辨率</strong> 与 <strong>垂直分辨率</strong>（dpi），用于印刷或文档输出场景。</p>
+
+      <h3>旋转和翻转</h3>
+      <ul>
+        <li><strong>旋转</strong>：不旋转、+90°、-90°、180°</li>
+        <li><strong>翻转</strong>：不翻转、水平翻转、垂直翻转</li>
+      </ul>
+    </section>
+
+    <section id="output">
+      <h2>输出设置</h2>
+      <h3>保存位置</h3>
+      <ul>
+        <li><strong>保存到：</strong>指定输出文件夹，可点击 <code>...</code> 浏览或 <strong>打开输出目录</strong></li>
+        <li><strong>原图像目录</strong>：勾选后输出到每张原图所在文件夹，忽略上方自定义路径</li>
+      </ul>
+
+      <h3>重命名</h3>
+      <p>勾选 <strong>重命名：</strong> 后可选择：</p>
+      <ul>
+        <li><strong>前缀/后缀</strong>：在文件名前或后添加文字（默认示例 <code>#_副本</code>）</li>
+        <li><strong>自动编号</strong>：按序号重命名，可设置 <strong>开始于：</strong> 的起始数字</li>
+      </ul>
+      <p>若输出目录不存在，程序会询问是否创建。</p>
+    </section>
+
+    <section id="overwrite">
+      <h2>文件覆盖</h2>
+      <p>主窗口 <strong>文件覆盖设置</strong> 与 <strong>设置 → 文件覆盖</strong> 共同决定同名文件的处理方式：</p>
+      <table>
+        <thead>
+          <tr><th>选项</th><th>行为</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>始终询问</td><td>同名时弹出对话框，可重命名或覆盖</td></tr>
+          <tr><td>跳过现有文件</td><td>自动跳过，保留目标目录中已有文件</td></tr>
+          <tr><td>覆盖现有文件</td><td>直接覆盖，原文件将被永久删除，请谨慎使用</td></tr>
+        </tbody>
+      </table>
+      <p>全局设置中还可选择 <strong>覆盖前进行确认</strong> 或 <strong>覆盖所有已存在图像文件</strong>，作为默认策略。</p>
+    </section>
+
+    <section id="pdf">
+      <h2>PDF 转换（Windows）</h2>
+      <p>官方发布包已<strong>内置 Ghostscript</strong>（位于 <code>ghostscript/</code> 目录），解压即可使用，无需用户自行安装。</p>
+      <div class="tree">LessMB-1.0.0-win64/
+├── lessmb.exe
+├── ghostscript/
+│   ├── bin/
+│   │   └── gswin64c.exe
+│   └── Resource/
+└── loc/
+    └── converseen_zh_CN.qm</div>
+
+      <h3>导入 PDF</h3>
+      <p>通过 <strong>文件 → 导入 PDF 文件</strong> 将 PDF 各页加入列表。分析大文件时可能提示「正在分析文件。这可能需要花费一些时间，请耐心等待…」。</p>
+      <p><strong>说明：</strong>LessMB 将 PDF 各页转为图像后再压缩/转换，并非直接对 PDF 二进制做重压缩。若只需缩小体积，请导入后选择 JPEG/WebP 等格式并调整压缩参数。</p>
+
+      <h3>若提示缺少 Ghostscript</h3>
+      <p>请确认 <code>ghostscript/bin/gswin64c.exe</code> 与 <code>lessmb.exe</code> 在同一发布包内且未被杀毒软件隔离。也可从 <a href="https://ghostscript.com/releases/gsdnld.html">ghostscript.com</a> 安装 64 位版本并加入 PATH。</p>
+    </section>
+
+    <section id="convert-run">
+      <h2>开始转换</h2>
+      <ol>
+        <li>确认列表中已勾选需要处理的图像</li>
+        <li>设置目标格式、输出目录及操作面板参数</li>
+        <li>点击工具栏 <strong>开始转换</strong> 或按 <kbd>F5</kbd></li>
+      </ol>
+      <p>转换过程中会显示 <strong>转换状态</strong> 对话框，包含总计、已转换、转换错误数量，可随时 <strong>停止</strong>。完成后可 <strong>打开输出目录</strong> 或 <strong>打开所有输出目录</strong> 查看结果。</p>
+    </section>
+
+    <section id="cli">
+      <h2>命令行</h2>
+      <p>在 <code>lessmb.exe</code> 所在目录打开命令提示符，可使用以下参数：</p>
+      <table>
+        <thead>
+          <tr><th>参数</th><th>说明</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>-p</code> / <code>--supported-formats</code></td><td>打印所有可读/可写的支持格式列表</td></tr>
+          <tr><td><code>-l</code> <em>list.txt</em> / <code>--list</code></td><td>从文本文件读取待导入的文件路径列表并加载到界面</td></tr>
+          <tr><td><code>-h</code> / <code>--help</code></td><td>显示帮助信息</td></tr>
+          <tr><td><code>-v</code> / <code>--version</code></td><td>显示版本号</td></tr>
+        </tbody>
+      </table>
+      <div class="card">
+        <strong>示例</strong><br>
+        <code>lessmb.exe -p</code><br>
+        <code>lessmb.exe -l D:\images\list.txt</code>
+      </div>
+      <p><code>list.txt</code> 中每行一个图像文件的完整路径。</p>
+    </section>
+
+    <section id="shortcuts">
+      <h2>快捷键</h2>
+      <table>
+        <thead>
+          <tr><th>快捷键</th><th>功能</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><kbd>Ctrl+O</kbd></td><td>打开图像</td></tr>
+          <tr><td><kbd>Ctrl+Alt+O</kbd></td><td>添加图像</td></tr>
+          <tr><td><kbd>Del</kbd></td><td>移除图像</td></tr>
+          <tr><td><kbd>Alt+Del</kbd></td><td>清空列表</td></tr>
+          <tr><td><kbd>Ctrl+H</kbd></td><td>勾选</td></tr>
+          <tr><td><kbd>Ctrl+Alt+H</kbd></td><td>全部勾选</td></tr>
+          <tr><td><kbd>Ctrl+J</kbd></td><td>取消勾选</td></tr>
+          <tr><td><kbd>Ctrl+Alt+J</kbd></td><td>全部取消勾选</td></tr>
+          <tr><td><kbd>Ctrl+I</kbd></td><td>反转已勾选项目</td></tr>
+          <tr><td><kbd>F5</kbd></td><td>开始转换</td></tr>
+          <tr><td><kbd>F1</kbd></td><td>在线帮助</td></tr>
+          <tr><td><kbd>Ctrl+Q</kbd></td><td>退出</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="faq">
+      <h2>常见问题</h2>
+      <h3>界面仍是英文？</h3>
+      <p>首次运行应默认中文。若仍为英文，请在 <strong>设置 → 语言</strong> 选择简体中文并重启；或删除旧版配置文件 <code>.lessmb.conf</code> 后重新启动。确认 <code>loc/converseen_zh_CN.qm</code> 存在。</p>
+
+      <h3>提示「未勾选任何图像」或「没有需要转换的图像」？</h3>
+      <p>列表左侧 <strong>待转换</strong> 列须勾选；且列表不能为空。</p>
+
+      <h3>提示「请指定输出目录」？</h3>
+      <p>取消勾选「原图像目录」后，必须在「保存到」中指定有效文件夹。</p>
+
+      <h3>转换后文件被跳过？</h3>
+      <p>可能因「跳过现有文件」策略或目标文件已存在。可改为「始终询问」或更换输出目录/重命名规则。</p>
+
+      <h3>如何查看支持的格式？</h3>
+      <p>运行 <code>lessmb.exe -p</code>，或在「关于 LessMB」中查看 ImageMagick 版本信息。</p>
+
+      <h3>导入 PDF 时提示需要 Ghostscript？</h3>
+      <p>请使用包含 <code>ghostscript/</code> 目录的完整发布包，或参考 <a href="#pdf">PDF 转换</a> 手动安装 Ghostscript。</p>
+    </section>
+
+    <footer class="footer">
+      <p>LessMB 1.0.0 · 批量图像压缩与转换工具</p>
+      <p>本指南文件：<code>user-guide.html</code></p>
+    </footer>
+  </main>
+</div>
+</body>
+</html>

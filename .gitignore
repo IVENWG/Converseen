@@ -7,3 +7,5 @@ converseen.pro.user
 build/
 .qtcreator/
 !package/AppImage/build/
+package/Windows/ghostscript/
+package/Windows/_ghostscript_stage/

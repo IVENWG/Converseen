@@ -385,6 +385,7 @@
     <ClCompile Include="src\dialogshowupdatemsg.cpp" />
     <ClCompile Include="src\formats.cpp" />
     <ClCompile Include="src\globals.cpp" />
+    <ClCompile Include="src\ghostscriptutil.cpp" />
     <ClCompile Include="src\inisettings.cpp" />
     <ClCompile Include="src\magickdefine.cpp" />
     <ClCompile Include="src\main.cpp" />
@@ -420,6 +421,7 @@
     <QtMoc Include="src\formats.h">
     </QtMoc>
     <ClInclude Include="src\globals.h" />
+    <ClInclude Include="src\ghostscriptutil.h" />
     <QtMoc Include="src\inisettings.h">
     </QtMoc>
     <ClInclude Include="src\magickdefine.h" />

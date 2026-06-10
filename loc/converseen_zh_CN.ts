@@ -387,8 +387,8 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/dialogmultipageeditor.cpp" line="159"/>
-        <source>In order to perform the conversion of &lt;b&gt;PDF&lt;/b&gt; files to images, &lt;b&gt;Ghostscript for Windows&lt;/b&gt; must be installed on your system.&lt;br&gt;&lt;br&gt;             Please install the correct version of &lt;b&gt;Ghostscript&lt;/b&gt;.&lt;br&gt;             Click on the &lt;b&gt;Help&lt;/b&gt; button for more details.</source>
-        <translation>为了将 &lt;b&gt;PDF&lt;/b&gt; 文件转换为图像，必须在您的系统上安装 &lt;b&gt;Ghostscript for Windows&lt;/b&gt;。&lt;br&gt;&lt;br&gt;请安装正确版本的 &lt;b&gt;Ghostscript&lt;/b&gt;。&lt;br&gt;单击&lt;b&gt;帮助&lt;/b&gt;按钮以获取更多详细信息。</translation>
+        <source>In order to perform the conversion of &lt;b&gt;PDF&lt;/b&gt; files to images, &lt;b&gt;Ghostscript for Windows&lt;/b&gt; must be installed on your system.&lt;br&gt;&lt;br&gt;             Please install the 64-bit version of &lt;b&gt;Ghostscript&lt;/b&gt; and ensure it is available on your system PATH.&lt;br&gt;&lt;br&gt;             Alternatively, place a portable Ghostscript installation in a &lt;b&gt;ghostscript&lt;/b&gt; folder next to &lt;b&gt;lessmb.exe&lt;/b&gt;.</source>
+        <translation>为了将 &lt;b&gt;PDF&lt;/b&gt; 文件转换为图像，必须在您的系统上安装 &lt;b&gt;Ghostscript for Windows&lt;/b&gt;。&lt;br&gt;&lt;br&gt;请安装 64 位版本的 &lt;b&gt;Ghostscript&lt;/b&gt;，并确保其已加入系统 PATH 环境变量。&lt;br&gt;&lt;br&gt;或者，将便携版 Ghostscript 放在 &lt;b&gt;lessmb.exe&lt;/b&gt; 同目录下的 &lt;b&gt;ghostscript&lt;/b&gt; 文件夹中。</translation>
     </message>
 </context>
 <context>

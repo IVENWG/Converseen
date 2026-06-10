@@ -16,6 +16,7 @@
 
 #include "translator.h"
 #include "globals.h"
+#include "ghostscriptutil.h"
 
 int main(int argc, char ** argv)
 {
@@ -83,6 +84,8 @@ int main(int argc, char ** argv)
     qputenv("MAGICK_CONFIGURE_PATH", resdir.toUtf8());
     qputenv("MAGICK_CODER_MODULE_PATH", resdir.toUtf8() + "\\modules\\coders");
     qputenv("MAGICK_CODER_FILTER_PATH", resdir.toUtf8() + "\\modules\\filters");
+
+    GhostscriptUtil::setupEnvironment();
 #endif
 
     QTranslator qtTranslator;

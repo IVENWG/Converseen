@@ -2,6 +2,7 @@
 #include "inisettings.h"
 
 #define INIFILENAME ".lessmb.conf"
+#define DEFAULT_LANGUAGE "converseen_zh_CN.qm"
 
 QSettings *IniSettings::settings;
 
@@ -32,6 +33,10 @@ void IniSettings::init()
 #endif
 
     settings = new QSettings(iniPath, QSettings::IniFormat);
+
+    if (!settings->contains("Options/language")) {
+        settings->setValue("Options/language", QString::fromUtf8(DEFAULT_LANGUAGE));
+    }
 }
 
 bool IniSettings::isDirWritable(const QDir &dir)
@@ -220,12 +225,11 @@ int IniSettings::currentVersion()
 
 QString IniSettings::language()
 {
-	QString language = "English";
     if (settings->contains("Options/language")) {
-        language = settings->value("Options/language").value<QString>();
+        return settings->value("Options/language").toString();
     }
 
-    return language;
+    return QString::fromUtf8(DEFAULT_LANGUAGE);
 }
 
 bool IniSettings::isAutoChechUpdates()

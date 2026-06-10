@@ -79,6 +79,7 @@ set(converseen_SOURCES
     src/dialogshowupdatemsg.cpp
     src/formats.cpp
     src/globals.cpp
+    src/ghostscriptutil.cpp
     src/inisettings.cpp
     src/mainwindowimpl.cpp
     src/mylabelpreviewer.cpp
@@ -104,6 +105,7 @@ set(converseen_HEADERS
     src/dialogshowupdatemsg.h
     src/formats.h
     src/globals.h
+    src/ghostscriptutil.h
     src/inisettings.h
     src/mainwindowimpl.h
     src/mylabelpreviewer.h
@@ -292,6 +294,14 @@ if(WIN32)
         string(REGEX REPLACE ".ts" ".qm" QM_FILE ${TS_FILE})
         install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${QM_FILE} DESTINATION ${CMAKE_INSTALL_BINDIR}/loc)
     endforeach()
+
+    set(LESSMB_GS_DIR "${CMAKE_SOURCE_DIR}/package/Windows/ghostscript")
+    if(EXISTS "${LESSMB_GS_DIR}/bin/gswin64c.exe")
+        install(DIRECTORY "${LESSMB_GS_DIR}/" DESTINATION "${CMAKE_INSTALL_BINDIR}/ghostscript")
+        message(STATUS "Bundling Ghostscript from ${LESSMB_GS_DIR}")
+    else()
+        message(WARNING "Ghostscript bundle not found. Run package/Windows/bundle-ghostscript.ps1 before packaging for PDF support.")
+    endif()
 
 
 elseif(APPLE AND MACOS_DEPLOY)

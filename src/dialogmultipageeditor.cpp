@@ -2,10 +2,9 @@
 #include <QFileIconProvider>
 #include <QDesktopServices>
 #include <QUrl>
-#include <QProcess>
 #include <QMessageBox>
-#include <QDebug>
 #include "dialogmultipageeditor.h"
+#include "ghostscriptutil.h"
 #include "ui_dialogmultipageeditor.h"
 
 DialogMultipageEditor::DialogMultipageEditor(QWidget *parent) :
@@ -108,34 +107,15 @@ void DialogMultipageEditor::checkGsWinInstalled()
 
 bool DialogMultipageEditor::isGhostscriptInstalled()
 {
-    const QStringList commands = {"gswin64c", "gswin32c"};
-    const QStringList arguments = {"--version"};
-
-    QProcess process;
-    process.setProcessEnvironment(QProcessEnvironment::systemEnvironment());
-
-    for (const QString& command : commands) {
-        process.start(command, arguments);
-
-        if (!process.waitForStarted()) {
-            continue;
-        }
-
-        if (process.exitCode() == 0) {
-            const QByteArray output = process.readAllStandardOutput();
-
-            return true;
-        }
-    }
-
-    return false;
+    return GhostscriptUtil::isInstalled();
 }
 
 void DialogMultipageEditor::showGhostscriptInstallationDialog()
 {
     const QString message = tr(
             "In order to perform the conversion of <b>PDF</b> files to images, <b>Ghostscript for Windows</b> must be installed on your system.<br><br> \
-            Please install the correct version of <b>Ghostscript</b> and ensure it is available on your system PATH."
+            Please install the 64-bit version of <b>Ghostscript</b> and ensure it is available on your system PATH.<br><br> \
+            Alternatively, place a portable Ghostscript installation in a <b>ghostscript</b> folder next to <b>lessmb.exe</b>."
         );
 
     QMessageBox::warning(

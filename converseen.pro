@@ -45,6 +45,7 @@ win32 {
     src/combofilters.h \
     src/updatechecker.h \
     src/globals.h \
+    src/ghostscriptutil.h \
     src/Modules/multipageconverter.h \
     src/dialogmultipageeditor.h \
     src/dialogshowupdatemsg.h
@@ -68,6 +69,7 @@ win32 {
     src/combofilters.cpp \
     src/updatechecker.cpp \
     src/globals.cpp \
+    src/ghostscriptutil.cpp \
     src/Modules/multipageconverter.cpp \
     src/dialogmultipageeditor.cpp \
     src/dialogshowupdatemsg.cpp
