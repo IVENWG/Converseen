@@ -9,9 +9,13 @@ set Qt6_DIR=C:\Qt\6.8.3\msvc2022_64\lib\cmake\Qt6
 
 cd /d E:\lessmb
 
-echo === Bundle Ghostscript ===
-powershell -NoProfile -ExecutionPolicy Bypass -File package\Windows\bundle-ghostscript.ps1
-if errorlevel 1 exit /b 1
+if exist package\Windows\ghostscript\bin\gswin64c.exe (
+  echo === Ghostscript bundle already present ===
+) else (
+  echo === Bundle Ghostscript ===
+  powershell -NoProfile -ExecutionPolicy Bypass -File package\Windows\bundle-ghostscript.ps1
+  if errorlevel 1 exit /b 1
+)
 
 if exist build rmdir /s /q build
 mkdir build
@@ -23,6 +27,7 @@ if errorlevel 1 exit /b 1
 nmake
 if errorlevel 1 exit /b 1
 
+if not exist loc mkdir loc
 lrelease ..\loc\converseen_zh_CN.ts -qm loc\converseen_zh_CN.qm
 if errorlevel 1 exit /b 1
 
