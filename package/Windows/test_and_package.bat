@@ -56,6 +56,12 @@ xcopy /Y /E /I styles "%RELEASE_DIR%\styles"
 xcopy /Y /E /I tls "%RELEASE_DIR%\tls"
 copy /Y loc\converseen_zh_CN.qm "%RELEASE_DIR%\loc\"
 xcopy /Y /E /I ..\package\Windows\ghostscript "%RELEASE_DIR%\ghostscript"
+powershell -NoProfile -ExecutionPolicy Bypass -File ..\package\Windows\clean-ghostscript-bundle.ps1 -BundleRoot "%RELEASE_DIR%\ghostscript"
+if errorlevel 1 exit /b 1
+
+echo === PDF smoke test ===
+powershell -NoProfile -ExecutionPolicy Bypass -File ..\package\Windows\test-pdf-support.ps1 -ReleaseDir "%RELEASE_DIR%"
+if errorlevel 1 exit /b 1
 
 powershell -NoProfile -Command "Compress-Archive -Path '%RELEASE_DIR%' -DestinationPath '%ZIP_FILE%' -Force"
 if errorlevel 1 exit /b 1

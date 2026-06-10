@@ -1,9 +1,4 @@
 # Downloads and stages Ghostscript for the LessMB Windows portable bundle.
-# Run from repo root or this script's directory before `cmake --install`.
-#
-# Output layout (next to lessmb.exe after install):
-#   ghostscript/bin/gswin64c.exe
-#   ghostscript/Resource/...
 
 $ErrorActionPreference = "Stop"
 
@@ -11,11 +6,17 @@ $GsVersion = "10.07.1"
 $GsTag = "gs10071"
 $GsInstaller = "gs10071w64.exe"
 $GsUrl = "https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/$GsTag/$GsInstaller"
+$SevenZipUrl = "https://www.7-zip.org/a/7zr.exe"
+$SevenZipExtraUrl = "https://www.7-zip.org/a/7z2409-extra.7z"
 
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $BundleRoot = Join-Path $ScriptDir "ghostscript"
-$StageRoot = Join-Path $ScriptDir "_ghostscript_stage"
-$InstallerPath = Join-Path $env:TEMP $GsInstaller
+$WorkRoot = Join-Path $ScriptDir "_ghostscript_work"
+$InstallerPath = Join-Path $WorkRoot $GsInstaller
+$SevenZipPath = Join-Path $WorkRoot "7zr.exe"
+$SevenZipExtraPath = Join-Path $WorkRoot "7z-extra.7z"
+$SevenZipFullPath = Join-Path $WorkRoot "7z.exe"
+$ExtractRoot = Join-Path $WorkRoot "extracted"
 
 function Remove-TreeIfExists([string]$Path) {
     if (Test-Path $Path) {
@@ -23,48 +24,58 @@ function Remove-TreeIfExists([string]$Path) {
     }
 }
 
+Get-Process -Name "gs10071w64" -ErrorAction SilentlyContinue | Stop-Process -Force
+
+Remove-TreeIfExists $WorkRoot
+Remove-TreeIfExists $BundleRoot
+New-Item -ItemType Directory -Path $WorkRoot -Force | Out-Null
+
 Write-Host "Downloading Ghostscript $GsVersion ..."
 Invoke-WebRequest -Uri $GsUrl -OutFile $InstallerPath
 
-Remove-TreeIfExists $StageRoot
-New-Item -ItemType Directory -Path $StageRoot | Out-Null
-
-Write-Host "Installing Ghostscript to staging directory ..."
-$installArgs = @(
-    "/S",
-    "/D=$StageRoot"
-)
-$process = Start-Process -FilePath $InstallerPath -ArgumentList $installArgs -Wait -PassThru
-if ($process.ExitCode -ne 0) {
-    throw "Ghostscript installer failed with exit code $($process.ExitCode)"
+Write-Host "Downloading 7-Zip tools ..."
+Invoke-WebRequest -Uri $SevenZipUrl -OutFile $SevenZipPath
+Invoke-WebRequest -Uri $SevenZipExtraUrl -OutFile $SevenZipExtraPath
+& $SevenZipPath x $SevenZipExtraPath "-o$WorkRoot" -y | Out-Host
+if (-not (Test-Path $SevenZipFullPath)) {
+    throw "Failed to prepare 7z.exe extractor"
 }
 
-$GsRoot = $StageRoot
-$versionDir = Get-ChildItem -Path $StageRoot -Directory |
-    Where-Object { $_.Name -match '^gs\d' } |
+Write-Host "Extracting Ghostscript installer ..."
+New-Item -ItemType Directory -Path $ExtractRoot -Force | Out-Null
+& $SevenZipFullPath x $InstallerPath "-o$ExtractRoot" -y | Out-Host
+if ($LASTEXITCODE -ne 0) {
+    throw "Failed to extract Ghostscript installer"
+}
+
+$gsExe = Get-ChildItem -Path $ExtractRoot -Recurse -Filter "gswin64c.exe" |
     Select-Object -First 1
-
-if ($versionDir) {
-    $GsRoot = $versionDir.FullName
+if (-not $gsExe) {
+    throw "gswin64c.exe not found after extraction"
 }
 
+$GsRoot = $gsExe.Directory.Parent.FullName
 $binDir = Join-Path $GsRoot "bin"
 $resourceDir = Join-Path $GsRoot "Resource"
-$gsExe = Join-Path $binDir "gswin64c.exe"
 
-if (-not (Test-Path $gsExe)) {
-    throw "Expected Ghostscript binary not found: $gsExe"
+if (-not (Test-Path $resourceDir)) {
+    $resourceDir = Get-ChildItem -Path $ExtractRoot -Recurse -Directory -Filter "Resource" |
+        Select-Object -First 1 -ExpandProperty FullName
 }
 
-Remove-TreeIfExists $BundleRoot
-New-Item -ItemType Directory -Path (Join-Path $BundleRoot "bin") | Out-Null
+if (-not (Test-Path (Join-Path $binDir "gswin64c.exe"))) {
+    $binDir = $gsExe.Directory.FullName
+}
+
+New-Item -ItemType Directory -Path (Join-Path $BundleRoot "bin") -Force | Out-Null
 Copy-Item -Path (Join-Path $binDir "*") -Destination (Join-Path $BundleRoot "bin") -Recurse -Force
 Copy-Item -Path $resourceDir -Destination (Join-Path $BundleRoot "Resource") -Recurse -Force
 
 $licenseCandidates = @(
     (Join-Path $GsRoot "LICENSE"),
     (Join-Path $GsRoot "COPYING"),
-    (Join-Path $GsRoot "doc\COPYING")
+    (Join-Path $ExtractRoot "LICENSE"),
+    (Join-Path $ExtractRoot "COPYING")
 )
 foreach ($license in $licenseCandidates) {
     if (Test-Path $license) {
@@ -73,8 +84,10 @@ foreach ($license in $licenseCandidates) {
     }
 }
 
-Remove-TreeIfExists $StageRoot
-Remove-Item -LiteralPath $InstallerPath -Force -ErrorAction SilentlyContinue
+Remove-TreeIfExists $WorkRoot
+
+Write-Host "Cleaning macOS metadata from Ghostscript bundle ..."
+& (Join-Path $ScriptDir "clean-ghostscript-bundle.ps1") -BundleRoot $BundleRoot
 
 Write-Host "Ghostscript bundle ready at: $BundleRoot"
-& $gsExe --version
+& (Join-Path $BundleRoot "bin\gswin64c.exe") --version

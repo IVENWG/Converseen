@@ -20,8 +20,6 @@
 
 int main(int argc, char ** argv)
 {
-	InitializeMagick(*argv);
-
     QCoreApplication::setApplicationName("LessMB");
     QCoreApplication::setApplicationVersion(globals::VERSION);
 
@@ -87,6 +85,8 @@ int main(int argc, char ** argv)
 
     GhostscriptUtil::setupEnvironment();
 #endif
+
+    InitializeMagick(*argv);
 
     QTranslator qtTranslator;
     qtTranslator.load("qt_" + QLocale::system().name(),

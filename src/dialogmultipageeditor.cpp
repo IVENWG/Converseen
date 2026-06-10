@@ -99,9 +99,11 @@ void DialogMultipageEditor::analyzeMultipageFile(QString fileName)
 void DialogMultipageEditor::checkGsWinInstalled()
 {
     if (isGhostscriptInstalled()) {
+        ui->labelHelpPDF->hide();
         return;
     }
 
+    ui->labelHelpPDF->show();
     showGhostscriptInstallationDialog();
 }
 
