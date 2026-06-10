@@ -1,68 +1,31 @@
-#include <QDesktopServices>
-
 #include "updatechecker.h"
-#include "globals.h"
-
-
 
 UpdateChecker::UpdateChecker(QObject *parent) :
     QObject(parent)
 {
     m_update_available = false;
-
-    mNetworkManager = new QNetworkAccessManager(this);
-    QObject::connect(mNetworkManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(onNetworkReply(QNetworkReply*)));
+    mNetworkManager = nullptr;
 }
 
 void UpdateChecker::checkForUpdates()
 {
-    QUrl url(VERSION_URL);
-    QNetworkRequest netReq(url);
-    netReq.setAttribute(QNetworkRequest::RedirectPolicyAttribute, true);    // Autoredirect
-
-    mNetworkManager->get(netReq);
+    m_update_available = false;
 }
 
 bool UpdateChecker::isUpdateAvailable()
 {
-    return m_update_available;
+    return false;
 }
 
 void UpdateChecker::onNetworkReply(QNetworkReply* reply)
 {
-    QString replyString;
-    if(reply->error() == QNetworkReply::NoError)
-    {
-        int httpstatuscode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toUInt();
-        //qDebug() << "httpstatuscode: " << httpstatuscode;
-
-        //QVariant possibleRedirectUrl = reply->attribute(QNetworkRequest::RedirectionTargetAttribute);
-        //qDebug() << "possibleRedirectUrl: " << possibleRedirectUrl;
-
-        switch(httpstatuscode)
-        {
-        case 200:
-            if (reply->isReadable())
-            {
-                replyString = QString::fromUtf8(reply->readAll().data());
-
-                checkIfIsNewVersion(replyString.toInt());
-            }
-            break;
-        }
-
-        //qDebug() << "replyString: " << replyString;
-    }
-
-    reply->deleteLater();
+    if (reply)
+        reply->deleteLater();
 }
 
 void UpdateChecker::checkIfIsNewVersion(int version)
 {
+    Q_UNUSED(version);
     m_update_available = false;
-
-    if (version > globals::CURRENT_INTERNAL_VERSION)
-        m_update_available = true;
-
-    emit updateAvailable(m_update_available);
+    emit updateAvailable(false);
 }
