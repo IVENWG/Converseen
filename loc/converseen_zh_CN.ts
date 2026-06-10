@@ -6,7 +6,7 @@
     <message>
         <location filename="../src/converter.cpp" line="70"/>
         <source>Skipped: %1 already esists.</source>
-        <translation type="unfinished">已跳过：%1 已存在。</translation>
+        <translation>已跳过：%1 已存在。</translation>
     </message>
     <message>
         <location filename="../src/converter.cpp" line="90"/>
@@ -18,7 +18,7 @@
     <message>
         <location filename="../src/converter.cpp" line="303"/>
         <source>ERROR: Format %1 is not supported for writing, choose another output format. Skipping!</source>
-        <translation type="unfinished">错误：格式 %1 不支持写入，请选择其他输出格式。已跳过！</translation>
+        <translation>错误：格式 %1 不支持写入，请选择其他输出格式。已跳过！</translation>
     </message>
 </context>
 <context>
@@ -50,7 +50,7 @@
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Total:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -119,8 +119,18 @@ p, li { white-space: pre-wrap; }
     <name>DialogInfo</name>
     <message>
         <location filename="../ui/dialoginfo.ui" line="26"/>
-        <source>About Converseen...</source>
-        <translation>关于 Converseen...</translation>
+        <source>About LessMB...</source>
+        <translation>关于 LessMB...</translation>
+    </message>
+    <message>
+        <location filename="../ui/dialoginfo.ui" line="59"/>
+        <source>LessMB is a batch image compression and conversion tool. You can resize and convert images in more than 100 different formats.</source>
+        <translation>LessMB 是一款批量图像压缩与转换工具。支持超过 100 种不同格式图像的缩放与转换。</translation>
+    </message>
+    <message>
+        <location filename="../src/dialoginfo.cpp" line="27"/>
+        <source>Batch image compression and conversion tool.</source>
+        <translation>批量图像压缩与转换工具。</translation>
     </message>
     <message>
         <location filename="../ui/dialoginfo.ui" line="50"/>
@@ -135,12 +145,12 @@ p, li { white-space: pre-wrap; }
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Converseen is an image batch conversion tool. You can resize and convert images in more than 100 different formats.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;LessMB is an image batch conversion tool. You can resize and convert images in more than 100 different formats.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Converseen 是一款图像批量转换工具。支持超过 100 种不同格式图像的缩放与转换。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;LessMB 是一款批量图像压缩与转换工具。支持超过 100 种不同格式图像的缩放与转换。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../ui/dialoginfo.ui" line="105"/>
@@ -183,12 +193,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../ui/dialoginfo.ui" line="207"/>
         <source>&lt;strong&gt;Turkish Translation: &lt;/strong&gt;Zeugma - &lt;a href=&quot;mailto:sunder67@hotmail.com&quot;&gt;sunder67@hotmail.com&lt;/a&gt; - Sabri Ünal - &lt;a href=&quot;mailto:yakushabb@gmail.com&quot;&gt;yakushabb@gmail.com&lt;/a&gt;</source>
-        <translation type="unfinished">&lt;strong&gt;土耳其语翻译：&lt;/strong&gt;Zeugma - &lt;a href=&quot;mailto:sunder67@hotmail.com&quot;&gt;sunder67@hotmail.com&lt;/a&gt; - Sabri Ünal - &lt;a href=&quot;mailto:yakushabb@gmail.com&quot;&gt;yakushabb@gmail.com&lt;/a&gt;</translation>
+        <translation>&lt;strong&gt;土耳其语翻译：&lt;/strong&gt;Zeugma - &lt;a href=&quot;mailto:sunder67@hotmail.com&quot;&gt;sunder67@hotmail.com&lt;/a&gt; - Sabri Ünal - &lt;a href=&quot;mailto:yakushabb@gmail.com&quot;&gt;yakushabb@gmail.com&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../ui/dialoginfo.ui" line="217"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Russian Translation: &lt;/span&gt;&lt;a href=&quot;https://github.com/alevtina-karashokova&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#007af4;&quot;&gt;Alevtina Karashokova&lt;/span&gt;&lt;/a&gt;, Stasik Savorovsky - &lt;a href=&quot;mailto:stas_stv@mail.ru&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#007af4;&quot;&gt;stas_stv@mail.ru&lt;/span&gt;&lt;/a&gt;, Kyrill Detinov - &lt;a href=&quot;mailto:lazy.kent@opensuse.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#007af4;&quot;&gt;lazy.kent@opensuse.org&lt;/span&gt;&lt;/a&gt;, ViktorOn - &lt;a href=&quot;https://github.com/ViktorOn&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#007af4;&quot;&gt;ViktorOn&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;俄语翻译: &lt;/span&gt;&lt;a href=&quot;https://github.com/alevtina-karashokova&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#007af4;&quot;&gt;Alevtina Karashokova&lt;/span&gt;&lt;/a&gt;, Stasik Savorovsky - &lt;a href=&quot;mailto:stas_stv@mail.ru&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#007af4;&quot;&gt;stas_stv@mail.ru&lt;/span&gt;&lt;/a&gt;, Kyrill Detinov - &lt;a href=&quot;mailto:lazy.kent@opensuse.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#007af4;&quot;&gt;lazy.kent@opensuse.org&lt;/span&gt;&lt;/a&gt;, ViktorOn - &lt;a href=&quot;https://github.com/ViktorOn&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#007af4;&quot;&gt;ViktorOn&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;俄语翻译: &lt;/span&gt;&lt;a href=&quot;https://github.com/alevtina-karashokova&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#007af4;&quot;&gt;Alevtina Karashokova&lt;/span&gt;&lt;/a&gt;, Stasik Savorovsky - &lt;a href=&quot;mailto:stas_stv@mail.ru&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#007af4;&quot;&gt;stas_stv@mail.ru&lt;/span&gt;&lt;/a&gt;, Kyrill Detinov - &lt;a href=&quot;mailto:lazy.kent@opensuse.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#007af4;&quot;&gt;lazy.kent@opensuse.org&lt;/span&gt;&lt;/a&gt;, ViktorOn - &lt;a href=&quot;https://github.com/ViktorOn&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#007af4;&quot;&gt;ViktorOn&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../ui/dialoginfo.ui" line="227"/>
@@ -208,7 +218,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../ui/dialoginfo.ui" line="251"/>
         <source>&lt;strong&gt;Ukrainian translation: &lt;/strong&gt;AleXKaN - &lt;a href=&quot;mailto:aws2@india.com&quot;&gt;aws2@india.com&lt;/a&gt;</source>
-        <translation type="unfinished">&lt;strong&gt;乌克兰语：&lt;/strong&gt;AleXKaN - &lt;a href=&quot;mailto:aws2@india.com&quot;&gt;aws2@india.com&lt;/a&gt;</translation>
+        <translation>&lt;strong&gt;乌克兰语：&lt;/strong&gt;AleXKaN - &lt;a href=&quot;mailto:aws2@india.com&quot;&gt;aws2@india.com&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../ui/dialoginfo.ui" line="258"/>
@@ -218,7 +228,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../ui/dialoginfo.ui" line="272"/>
         <source>&lt;strong&gt;Korean translation: &lt;/strong&gt;JungHee Lee - &lt;a href=&quot;https://github.com/MarongHappy&quot;&gt;MarongHappy (GitHub)&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;strong&gt;韩语翻译：&lt;/strong&gt;JungHee Lee - &lt;a href=&quot;https://github.com/MarongHappy&quot;&gt;MarongHappy (GitHub)&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../ui/dialoginfo.ui" line="294"/>
@@ -227,8 +237,8 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../ui/dialoginfo.ui" line="382"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:600;&quot;&gt;Follow Converseen:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:600;&quot;&gt;关注 Converseen:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:600;&quot;&gt;Follow LessMB:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:600;&quot;&gt;关注 LessMB:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../ui/dialoginfo.ui" line="468"/>
@@ -248,7 +258,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../ui/dialoginfo.ui" line="265"/>
         <source>&lt;strong&gt;Simplified Chinese translation: &lt;/strong&gt;myd7349 - &lt;a href=&quot;mailto:myd7349@gmail.com&quot;&gt;myd7349@gmail.com&lt;/a&gt;</source>
-        <translation type="unfinished">&lt;strong&gt;简体中文：&lt;/strong&gt;myd7349 - &lt;a href=&quot;mailto:myd7349@gmail.com&quot;&gt;myd7349@gmail.com&lt;/a&gt;，大眼仔~旭 - &lt;a href=&quot;mailto:wcxu21@126.com&quot;&gt;wcxu21@126.com&lt;/a&gt;</translation>
+        <translation>&lt;strong&gt;简体中文：&lt;/strong&gt;myd7349 - &lt;a href=&quot;mailto:myd7349@gmail.com&quot;&gt;myd7349@gmail.com&lt;/a&gt;，大眼仔~旭 - &lt;a href=&quot;mailto:wcxu21@126.com&quot;&gt;wcxu21@126.com&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../ui/dialoginfo.ui" line="111"/>
@@ -256,41 +266,41 @@ p, li { white-space: pre-wrap; }
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Author: &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Francesco Mondello (Faster) - &lt;/span&gt;&lt;a href=&quot;https://fasterland.net/&quot;&gt;&lt;span style=&quot; text-decoration: underline; &quot;&gt;fasterland.net&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Author: &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Francesco Mondello (Faster) - &lt;/span&gt;&lt;a href=&quot;https:///&quot;&gt;&lt;span style=&quot; text-decoration: underline; &quot;&gt;&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Email: &lt;/span&gt;&lt;a href=&quot;faster3ck@gmail.com&quot;&gt;&lt;span style=&quot; font-size:10pt; text-decoration: underline; &quot;&gt;faster3ck@gmail.com&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Project Website: &lt;/span&gt;&lt;a href=&quot;https://converseen.fasterland.net&quot;&gt;&lt;span style=&quot; text-decoration: underline; &quot;&gt;converseen.fasterland.net&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Project Website: &lt;/span&gt;&lt;a href=&quot;https://&quot;&gt;&lt;span style=&quot; text-decoration: underline; &quot;&gt;&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;作者：&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Francesco Mondello (Faster) - &lt;/span&gt;&lt;a href=&quot;https://fasterland.net/&quot;&gt;&lt;span style=&quot; text-decoration: underline; &quot;&gt;fasterland.net&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;作者：&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Francesco Mondello (Faster) - &lt;/span&gt;&lt;a href=&quot;https:///&quot;&gt;&lt;span style=&quot; text-decoration: underline; &quot;&gt;&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;邮箱：&lt;/span&gt;&lt;a href=&quot;faster3ck@gmail.com&quot;&gt;&lt;span style=&quot; font-size:10pt; text-decoration: underline; &quot;&gt;faster3ck@gmail.com&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;项目网站：&lt;/span&gt;&lt;a href=&quot;https://converseen.fasterland.net&quot;&gt;&lt;span style=&quot; text-decoration: underline; &quot;&gt;converseen.fasterland.net&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;项目网站：&lt;/span&gt;&lt;a href=&quot;https://&quot;&gt;&lt;span style=&quot; text-decoration: underline; &quot;&gt;&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../ui/dialoginfo.ui" line="176"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;French Translation: &lt;/span&gt;Adrien DAUGABEL - &lt;a href=&quot;mailto:adrien.d@mageialinux-online.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; &quot;&gt;adrien.d@mageialinux-online.org - &lt;/span&gt;&lt;/a&gt;David GEIGER &lt;a href=&quot;mailto:david.david@mageialinux-online.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; &quot;&gt;david.david@mageialinux-online.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;法语翻译：&lt;/span&gt;Adrien DAUGABEL - &lt;a href=&quot;mailto:adrien.d@mageialinux-online.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; &quot;&gt;adrien.d@mageialinux-online.org - &lt;/span&gt;&lt;/a&gt;David GEIGER &lt;a href=&quot;mailto:david.david@mageialinux-online.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; &quot;&gt;david.david@mageialinux-online.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;法语翻译：&lt;/span&gt;Adrien DAUGABEL - &lt;a href=&quot;mailto:adrien.d@mageialinux-online.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; &quot;&gt;adrien.d@mageialinux-online.org - &lt;/span&gt;&lt;/a&gt;David GEIGER &lt;a href=&quot;mailto:david.david@mageialinux-online.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; &quot;&gt;david.david@mageialinux-online.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../ui/dialoginfo.ui" line="200"/>
         <source>&lt;strong&gt;Spanish (Chile) Translation: &lt;/strong&gt;Nelson Álvarez Sáez - &lt;a href=&quot;mailto:alvareznelson@gmail.com&quot;&gt;alvareznelson@gmail.com&lt;/a&gt;</source>
-        <translation type="unfinished">&lt;strong&gt;西班牙语（智利）翻译：&lt;/strong&gt;Nelson Álvarez Sáez - &lt;a href=&quot;mailto:alvareznelson@gmail.com&quot;&gt;alvareznelson@gmail.com&lt;/a&gt;</translation>
+        <translation>&lt;strong&gt;西班牙语（智利）翻译：&lt;/strong&gt;Nelson Álvarez Sáez - &lt;a href=&quot;mailto:alvareznelson@gmail.com&quot;&gt;alvareznelson@gmail.com&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialoginfo.cpp" line="41"/>
         <source>Qt Version:</source>
-        <translation type="unfinished">Qt 版本：</translation>
+        <translation>Qt 版本：</translation>
     </message>
     <message>
         <location filename="../src/dialoginfo.cpp" line="72"/>
         <source>Make a Donation!</source>
-        <translation type="unfinished">捐赠!</translation>
+        <translation>捐赠！</translation>
     </message>
     <message>
         <location filename="../src/dialoginfo.cpp" line="73"/>
         <source>Donate using PayPal, Ko-Fi or Cryptocurrencies.</source>
-        <translation type="unfinished">使用 PayPal、Ko-Fi 或加密货币进行捐赠。</translation>
+        <translation>使用 PayPal、Ko-Fi 或加密货币进行捐赠。</translation>
     </message>
 </context>
 <context>
@@ -327,8 +337,8 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../ui/dialogmultipageeditor.ui" line="65"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://converseen.fasterland.net/converseen-can-convert-pdf-as-image-files/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#007af4;&quot;&gt;How to enable the PDF conversion?&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://converseen.fasterland.net/converseen-can-convert-pdf-as-image-files/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#007af4;&quot;&gt;如何启用 PDF 转换功能？&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https:///converseen-can-convert-pdf-as-image-files/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#007af4;&quot;&gt;How to enable the PDF conversion?&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https:///converseen-can-convert-pdf-as-image-files/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#007af4;&quot;&gt;如何启用 PDF 转换功能？&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../ui/dialogmultipageeditor.ui" line="93"/>
@@ -363,22 +373,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../ui/dialogmultipageeditor.ui" line="157"/>
         <source>Help</source>
-        <translation type="unfinished">帮助</translation>
+        <translation>帮助</translation>
     </message>
     <message>
         <location filename="../ui/dialogmultipageeditor.ui" line="160"/>
         <source>Open online help</source>
-        <translation type="unfinished">打开在线帮助</translation>
+        <translation>打开在线帮助</translation>
     </message>
     <message>
         <location filename="../ui/dialogmultipageeditor.ui" line="163"/>
         <source>F1</source>
-        <translation type="unfinished">F1</translation>
+        <translation>F1</translation>
     </message>
     <message>
         <location filename="../src/dialogmultipageeditor.cpp" line="159"/>
         <source>In order to perform the conversion of &lt;b&gt;PDF&lt;/b&gt; files to images, &lt;b&gt;Ghostscript for Windows&lt;/b&gt; must be installed on your system.&lt;br&gt;&lt;br&gt;             Please install the correct version of &lt;b&gt;Ghostscript&lt;/b&gt;.&lt;br&gt;             Click on the &lt;b&gt;Help&lt;/b&gt; button for more details.</source>
-        <translation type="unfinished">为了将 &lt;b&gt;PDF&lt;/b&gt; 文件转换为图像，必须在您的系统上安装 &lt;b&gt;Ghostscript for Windows&lt;/b&gt;。&lt;br&gt;&lt;br&gt;请安装正确版本的 &lt;b&gt;Ghostscript&lt;/b&gt;。&lt;br&gt;单击&lt;b&gt;帮助&lt;/b&gt;按钮以获取更多详细信息。</translation>
+        <translation>为了将 &lt;b&gt;PDF&lt;/b&gt; 文件转换为图像，必须在您的系统上安装 &lt;b&gt;Ghostscript for Windows&lt;/b&gt;。&lt;br&gt;&lt;br&gt;请安装正确版本的 &lt;b&gt;Ghostscript&lt;/b&gt;。&lt;br&gt;单击&lt;b&gt;帮助&lt;/b&gt;按钮以获取更多详细信息。</translation>
     </message>
 </context>
 <context>
@@ -401,12 +411,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../ui/dialogoptions.ui" line="46"/>
         <source>Themes</source>
-        <translation type="unfinished">主题</translation>
+        <translation>主题</translation>
     </message>
     <message>
         <location filename="../ui/dialogoptions.ui" line="52"/>
         <source>Style:</source>
-        <translation type="unfinished">样式：</translation>
+        <translation>样式：</translation>
     </message>
     <message>
         <location filename="../ui/dialogoptions.ui" line="72"/>
@@ -451,18 +461,18 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/dialogoptions.cpp" line="66"/>
-        <source>Please, restart Converseen to apply current language!</source>
-        <translation type="unfinished">请重新启动 Converseen 以应用当前设置的语言！</translation>
+        <source>Please, restart LessMB to apply current language!</source>
+        <translation>请重新启动 LessMB 以应用当前设置的语言！</translation>
     </message>
     <message>
         <location filename="../src/dialogoptions.cpp" line="106"/>
-        <source>Please restart Converseen to apply the new theme!</source>
-        <translation type="unfinished">请重新启动 Converseen 以应用新主题！</translation>
+        <source>Please restart LessMB to apply the new theme!</source>
+        <translation>请重新启动 LessMB 以应用新主题！</translation>
     </message>
     <message>
         <location filename="../src/dialogoptions.cpp" line="145"/>
         <source>System</source>
-        <translation type="unfinished">系统</translation>
+        <translation>系统</translation>
     </message>
 </context>
 <context>
@@ -500,83 +510,83 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../ui/dialogquality.ui" line="76"/>
         <source>Quality 1 - 100:</source>
-        <translation type="unfinished">质量 1 - 100：</translation>
+        <translation>质量 1 - 100：</translation>
     </message>
     <message>
         <location filename="../ui/dialogquality.ui" line="83"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;For the JPEG image formats, quality is 1 (lowest image quality and highest compression) to 100 (best quality but least effective compression).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;对于 JPEG 图像格式，质量为 1（图像质量最低，压缩率最高）到 100（质量最好，但压缩效率最低）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;对于 JPEG 图像格式，质量为 1（图像质量最低，压缩率最高）到 100（质量最好，但压缩效率最低）。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../ui/dialogquality.ui" line="86"/>
         <location filename="../ui/dialogquality.ui" line="184"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;#&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#007af4; vertical-align:super;&quot;&gt;?&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;#&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#007af4; vertical-align:super;&quot;&gt;?&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;#&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#007af4; vertical-align:super;&quot;&gt;?&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../ui/dialogquality.ui" line="166"/>
         <source>Png/Mng compression level</source>
-        <translation type="unfinished">Png/Mng 压缩级别</translation>
+        <translation>Png/Mng 压缩级别</translation>
     </message>
     <message>
         <location filename="../ui/dialogquality.ui" line="174"/>
         <source>Quality 0 - 9:</source>
-        <translation type="unfinished">质量 0 - 9：</translation>
+        <translation>质量 0 - 9：</translation>
     </message>
     <message>
         <location filename="../ui/dialogquality.ui" line="181"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sets the zlib compression level from 1 to 9 (1 is lowest and 9 is highest).&lt;/p&gt;&lt;p&gt;For compression level 0, the Huffman-only strategy is used, which is fastest but not necessarily the worst compression.&lt;/p&gt;&lt;p&gt;PNG uses a &apos;lossless&apos; compression method, so increasing the compression does NOT reduce your image quality.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;将 zlib 压缩级别从 1 设置为 9（1 为最低，9 为最高）。&lt;/p&gt;&lt;p&gt;对于压缩级别 0，使用仅 Huffman 策略，该策略速度最快，但不一定是最差的压缩。&lt;/p&gt;&lt;p&gt;PNG 使用“无损”压缩方法，因此增加压缩率不会降低图像质量。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;将 zlib 压缩级别从 1 设置为 9（1 为最低，9 为最高）。&lt;/p&gt;&lt;p&gt;对于压缩级别 0，使用仅 Huffman 策略，该策略速度最快，但不一定是最差的压缩。&lt;/p&gt;&lt;p&gt;PNG 使用“无损”压缩方法，因此增加压缩率不会降低图像质量。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../ui/dialogquality.ui" line="53"/>
         <source>Jpeg</source>
-        <translation type="unfinished">Jpeg</translation>
+        <translation>Jpeg</translation>
     </message>
     <message>
         <location filename="../ui/dialogquality.ui" line="145"/>
         <source>Png/Mng</source>
-        <translation type="unfinished">Png/Mng</translation>
+        <translation>Png/Mng</translation>
     </message>
     <message>
         <location filename="../ui/dialogquality.ui" line="257"/>
         <source>WebP</source>
-        <translation type="unfinished">WebP</translation>
+        <translation>WebP</translation>
     </message>
     <message>
         <location filename="../ui/dialogquality.ui" line="269"/>
         <source>WebP General Settings</source>
-        <translation type="unfinished">WebP 常规设置</translation>
+        <translation>WebP 常规设置</translation>
     </message>
     <message>
         <location filename="../ui/dialogquality.ui" line="275"/>
         <source>Enable Lossless Compression</source>
-        <translation type="unfinished">启用无损压缩</translation>
+        <translation>启用无损压缩</translation>
     </message>
     <message>
         <location filename="../ui/dialogquality.ui" line="284"/>
         <source>Compression Method:</source>
-        <translation type="unfinished">压缩方法：</translation>
+        <translation>压缩方法：</translation>
     </message>
     <message>
         <location filename="../ui/dialogquality.ui" line="328"/>
         <source>Quality:</source>
-        <translation type="unfinished">质量：</translation>
+        <translation>质量：</translation>
     </message>
     <message>
         <location filename="../ui/dialogquality.ui" line="347"/>
         <source>%</source>
-        <translation type="unfinished">%</translation>
+        <translation>%</translation>
     </message>
     <message>
         <location filename="../ui/dialogquality.ui" line="361"/>
         <source>Enable Dithering</source>
-        <translation type="unfinished">启用抖动</translation>
+        <translation>启用抖动</translation>
     </message>
     <message>
         <location filename="../ui/dialogquality.ui" line="431"/>
         <source>Remove image&apos;s metadata</source>
-        <translation type="unfinished">删除图像的元数据</translation>
+        <translation>删除图像的元数据</translation>
     </message>
 </context>
 <context>
@@ -624,8 +634,8 @@ p, li { white-space: pre-wrap; }
     <name>MainWindow</name>
     <message>
         <location filename="../ui/mainwindow.ui" line="32"/>
-        <source>Converseen</source>
-        <translation>Converseen</translation>
+        <source>LessMB</source>
+        <translation>LessMB</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="65"/>
@@ -660,37 +670,37 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../ui/mainwindow.ui" line="316"/>
         <source>File Overwrite Settings</source>
-        <translation type="unfinished">文件覆盖设置</translation>
+        <translation>文件覆盖设置</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="324"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If the processed output file has the same name as an existing file in the destination folder, you will be prompted to choose an action manually.&lt;/p&gt;&lt;p&gt;You can either rename it or overwrite the existing file.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;如果处理后的输出文件与目标文件夹中的现有文件同名，系统将提示您手动选择操作。&lt;/p&gt;&lt;p&gt;您可以重命名它，也可以覆盖现有文件。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;如果处理后的输出文件与目标文件夹中的现有文件同名，系统将提示您手动选择操作。&lt;/p&gt;&lt;p&gt;您可以重命名它，也可以覆盖现有文件。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="327"/>
         <source>Always Ask</source>
-        <translation type="unfinished">始终询问</translation>
+        <translation>始终询问</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="350"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If the processed output file has the same name as an existing file in the same folder, the conversion process will automatically &lt;span style=&quot; font-weight:700;&quot;&gt;skip&lt;/span&gt; it to &lt;span style=&quot; font-weight:700;&quot;&gt;preserve&lt;/span&gt; the one in the destination directory.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;如果处理后的输出文件与同一文件夹中的现有文件同名，则转换过程将自动&lt;span style=&quot; font-weight:700;&quot;&gt;跳过&lt;/span&gt;该文件并&lt;span style=&quot; font-weight:700;&quot;&gt;保留&lt;/span&gt;目标目录中的文件。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;如果处理后的输出文件与同一文件夹中的现有文件同名，则转换过程将自动&lt;span style=&quot; font-weight:700;&quot;&gt;跳过&lt;/span&gt;该文件并&lt;span style=&quot; font-weight:700;&quot;&gt;保留&lt;/span&gt;目标目录中的文件。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="353"/>
         <source>Skip Existing Files</source>
-        <translation type="unfinished">跳过现有文件</translation>
+        <translation>跳过现有文件</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="376"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If the processed output file has the same name as an existing file in the same folder, the conversion process will &lt;span style=&quot; font-weight:700;&quot;&gt;overwrite&lt;/span&gt; the original file, &lt;span style=&quot; font-weight:700;&quot;&gt;permanently deleting it&lt;/span&gt;.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Please, use caution when selecting this option!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;如果处理后的输出文件与同一文件夹中的现有文件同名，则转换过程将&lt;span style=&quot; font-weight:700;&quot;&gt;覆盖&lt;/span&gt;原始文件，&lt;span style=&quot; font-weight:700;&quot;&gt;永久删除&lt;/span&gt;。&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;选择此选项时请小心！&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;如果处理后的输出文件与同一文件夹中的现有文件同名，则转换过程将&lt;span style=&quot; font-weight:700;&quot;&gt;覆盖&lt;/span&gt;原始文件，&lt;span style=&quot; font-weight:700;&quot;&gt;永久删除&lt;/span&gt;。&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;选择此选项时请小心！&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="379"/>
         <source>Overwrite Existing Files</source>
-        <translation type="unfinished">覆盖现有文件</translation>
+        <translation>覆盖现有文件</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="409"/>
@@ -839,12 +849,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../ui/mainwindow.ui" line="1034"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Maintain Aspect Ratio&lt;/span&gt;&lt;br/&gt;Keeps the image proportions unchanged.&lt;br/&gt;&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Prioritize Width or Height&lt;/span&gt;&lt;br/&gt;Enter &lt;span style=&quot; font-weight:700;&quot;&gt;0&lt;/span&gt; for the side to ignore. The other value is kept constant, and the ignored dimension is calculated automatically.&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Example:&lt;/span&gt;&lt;span style=&quot; font-style:italic;&quot;&gt; Height 800 px, Width 0 px&lt;/span&gt; → height stays &lt;span style=&quot; font-style:italic;&quot;&gt;800 px&lt;/span&gt;, width is calculated &lt;span style=&quot; font-style:italic;&quot;&gt;automatically&lt;/span&gt;.&lt;br/&gt;Works the same in &lt;span style=&quot; font-weight:700;&quot;&gt;percentage&lt;/span&gt; mode. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;保持纵横比&lt;/span&gt;&lt;br/&gt;保持图像比例不变。&lt;br/&gt;&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;优先宽度或高度&lt;/span&gt;&lt;br/&gt;在要忽略的边输入 &lt;span style=&quot; font-weight:700;&quot;&gt;0&lt;/span&gt;。另一边的值保持不变，被忽略的维度将自动计算。&lt;br/&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;示例：&lt;/span&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;高度 800 像素，宽度 0 像素&lt;/span&gt; → 高度保持 &lt;span style=&quot; font-style:italic;&quot;&gt;800 像素&lt;/span&gt;，宽度 &lt;span style=&quot; font-style:italic;&quot;&gt;自动&lt;/span&gt;计算。&lt;br/&gt;在 &lt;span style=&quot; font-weight:700;&quot;&gt;百分比&lt;/span&gt; 模式下同样适用。 &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="1037"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;#&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#007af4; vertical-align:super;&quot;&gt;?&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;#&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#007af4; vertical-align:super;&quot;&gt;?&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;#&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#007af4; vertical-align:super;&quot;&gt;?&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="1068"/>
@@ -915,12 +925,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../ui/mainwindow.ui" line="1584"/>
         <source>Invert Checked Items</source>
-        <translation type="unfinished">反转已勾选项目</translation>
+        <translation>反转已勾选项目</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="1587"/>
         <source>Ctrl+I</source>
-        <translation type="unfinished">Ctrl+I</translation>
+        <translation>Ctrl+I</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="155"/>
@@ -975,7 +985,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../ui/mainwindow.ui" line="1024"/>
         <source>Maintain aspect ratio</source>
-        <translation type="unfinished">保持纵横比</translation>
+        <translation>保持纵横比</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="1354"/>
@@ -1135,7 +1145,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../ui/mainwindow.ui" line="1490"/>
         <source>Ctrl+Q</source>
-        <translation type="unfinished">Ctrl+Q</translation>
+        <translation>Ctrl+Q</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="1536"/>
@@ -1159,44 +1169,44 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="1552"/>
-        <source>Check if a new version of Converseen is available</source>
+        <source>Check if a new version of LessMB is available</source>
         <translation>检查是否有新版本</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="1561"/>
         <location filename="../ui/mainwindow.ui" line="1564"/>
         <source>Import directory</source>
-        <translation type="unfinished">导入目录</translation>
+        <translation>导入目录</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="1576"/>
         <source>Open online help</source>
-        <translation type="unfinished">打开在线帮助</translation>
+        <translation>打开在线帮助</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="954"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Load Image Sizes&lt;/span&gt;&lt;/p&gt;&lt;p&gt;If &apos;&lt;span style=&quot; font-weight:700;&quot;&gt;px&apos;&lt;/span&gt; is selected, the original image sizes will be loaded into the &lt;span style=&quot; font-weight:700;&quot;&gt;Width/Height&lt;/span&gt; fields. &lt;/p&gt;&lt;p&gt;If &lt;span style=&quot; font-weight:700;&quot;&gt;&apos;%&apos;&lt;/span&gt; is selected, it restores the &lt;span style=&quot; font-weight:700;&quot;&gt;Width/Height&lt;/span&gt; fields to &lt;span style=&quot; font-weight:700;&quot;&gt;100%&lt;/span&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;加载图像大小&lt;/span&gt;&lt;/p&gt;&lt;p&gt;如果选择了“&lt;span style=&quot; font-weight:700;&quot;&gt;px&apos;&lt;/span&gt;”，则原始图像大小将加载到&lt;span style=&quot; font-weight:700;&quot;&gt;宽度/高度&lt;/span&gt;字段中。&lt;/p&gt;&lt;p&gt;如果选择了&lt;span style=&quot; font-weight:700;&quot;&gt;&apos;%&apos;&lt;/span&gt;，则将&lt;span style=&quot; font-weight:700;&quot;&gt;宽度/高度&lt;/span&gt;字段恢复为&lt;span style=&quot; font-weight:700;&quot;&gt;100%&lt;/span&gt;。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;加载图像大小&lt;/span&gt;&lt;/p&gt;&lt;p&gt;如果选择了“&lt;span style=&quot; font-weight:700;&quot;&gt;px&apos;&lt;/span&gt;”，则原始图像大小将加载到&lt;span style=&quot; font-weight:700;&quot;&gt;宽度/高度&lt;/span&gt;字段中。&lt;/p&gt;&lt;p&gt;如果选择了&lt;span style=&quot; font-weight:700;&quot;&gt;&apos;%&apos;&lt;/span&gt;，则将&lt;span style=&quot; font-weight:700;&quot;&gt;宽度/高度&lt;/span&gt;字段恢复为&lt;span style=&quot; font-weight:700;&quot;&gt;100%&lt;/span&gt;。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="968"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Link Aspect Ratio with Selected Image&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Automatically adjusts the aspect ratio values when you enter a value in the &lt;span style=&quot; font-weight:700;&quot;&gt;Width/Height&lt;/span&gt; fields.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;将纵横比与所选图像链接&lt;/span&gt;&lt;/p&gt;&lt;p&gt;当您在&lt;span style=&quot; font-weight:700;&quot;&gt;宽度/高度&lt;/span&gt;字段中输入值时，系统会自动调整纵横比值。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;将纵横比与所选图像链接&lt;/span&gt;&lt;/p&gt;&lt;p&gt;当您在&lt;span style=&quot; font-weight:700;&quot;&gt;宽度/高度&lt;/span&gt;字段中输入值时，系统会自动调整纵横比值。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="1523"/>
         <source>&amp;Donate!</source>
-        <translation type="unfinished">捐赠(&amp;D)</translation>
+        <translation>捐赠(&amp;D)</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="1526"/>
         <source>Donate via Paypal, Ko-Fi, Cryptocurrencies</source>
-        <translation type="unfinished">通过 Paypal、Ko-Fi、加密货币捐赠</translation>
+        <translation>通过 Paypal、Ko-Fi、加密货币捐赠</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="1573"/>
         <source>&amp;Online Help</source>
-        <translation type="unfinished">在线帮助(&amp;O)</translation>
+        <translation>在线帮助(&amp;O)</translation>
     </message>
 </context>
 <context>
@@ -1234,12 +1244,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindowimpl.cpp" line="397"/>
         <source>Scanning folders for images...</source>
-        <translation type="unfinished"></translation>
+        <translation>正在扫描文件夹中的图像…</translation>
     </message>
     <message>
         <location filename="../src/mainwindowimpl.cpp" line="509"/>
         <source>n/a</source>
-        <translation type="unfinished">n/a</translation>
+        <translation>n/a</translation>
     </message>
     <message>
         <location filename="../src/mainwindowimpl.cpp" line="549"/>
@@ -1283,12 +1293,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindowimpl.cpp" line="774"/>
         <source>Skipped</source>
-        <translation type="unfinished">已跳过</translation>
+        <translation>已跳过</translation>
     </message>
     <message>
         <location filename="../src/mainwindowimpl.cpp" line="776"/>
         <source>Error</source>
-        <translation type="unfinished">错误</translation>
+        <translation>错误</translation>
     </message>
     <message>
         <location filename="../src/mainwindowimpl.cpp" line="785"/>
@@ -1298,23 +1308,23 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindowimpl.cpp" line="1379"/>
         <source>No updates available!</source>
-        <translation type="unfinished">暂无更新！</translation>
+        <translation>暂无更新！</translation>
     </message>
     <message>
         <location filename="../src/mainwindowimpl.cpp" line="1380"/>
         <source>%1 is already updated to the most recent version.</source>
-        <translation type="unfinished">%1 已更新至最新版本。</translation>
+        <translation>%1 已更新至最新版本。</translation>
     </message>
     <message>
         <location filename="../src/mainwindowimpl.cpp" line="1397"/>
         <source>New version is available!</source>
-        <translation type="unfinished">发现新版本！</translation>
+        <translation>发现新版本！</translation>
     </message>
     <message>
         <location filename="../src/mainwindowimpl.cpp" line="1398"/>
         <source>A new version of %1 is available!
 Would you download it?</source>
-        <translation type="unfinished">发现 %1 可用的新版本！
+        <translation>发现 %1 可用的新版本！
 想要现在下载吗？</translation>
     </message>
     <message>
@@ -1376,22 +1386,22 @@ Click Abort to cancel all operations.</source>
     <message>
         <location filename="../src/mainwindowimpl.cpp" line="1330"/>
         <source>Aborted!</source>
-        <translation type="unfinished">已终止！</translation>
+        <translation>已终止！</translation>
     </message>
     <message>
         <location filename="../src/mainwindowimpl.cpp" line="769"/>
         <source>Converted</source>
-        <translation type="unfinished">已转换</translation>
+        <translation>已转换</translation>
     </message>
     <message>
         <location filename="../src/mainwindowimpl.cpp" line="288"/>
         <source>Do you want to import subfolders as well?</source>
-        <translation type="unfinished">您还想导入子文件夹吗？</translation>
+        <translation>您还想导入子文件夹吗？</translation>
     </message>
     <message>
         <location filename="../src/mainwindowimpl.cpp" line="364"/>
         <source>You are going to import %1 directories. Do you want to import subfolders as well?</source>
-        <translation type="unfinished">您将要导入 %1 个目录。是否也导入子文件夹？</translation>
+        <translation>您将要导入 %1 个目录。是否也导入子文件夹？</translation>
     </message>
 </context>
 <context>
@@ -1419,12 +1429,12 @@ Click Abort to cancel all operations.</source>
     <message>
         <location filename="../src/pixtreewidget.cpp" line="44"/>
         <source>Image size</source>
-        <translation type="unfinished">图像大小</translation>
+        <translation>图像大小</translation>
     </message>
     <message>
         <location filename="../src/pixtreewidget.cpp" line="45"/>
         <source>Resolution</source>
-        <translation type="unfinished">分辨率</translation>
+        <translation>分辨率</translation>
     </message>
     <message>
         <location filename="../src/pixtreewidget.cpp" line="46"/>

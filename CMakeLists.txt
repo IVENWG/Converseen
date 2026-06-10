@@ -4,18 +4,18 @@ if(WIN32)
     cmake_policy(SET CMP0135 NEW)
 endif()
 
-set(CONVERSEEN_VERSION 0.15.2.5)
+set(LESSMB_VERSION 1.0.0)
 
 project(
-    converseen
-    VERSION ${CONVERSEEN_VERSION}
+    lessmb
+    VERSION ${LESSMB_VERSION}
     LANGUAGES CXX)
-set(PROJECT_NAME_CAPITALIZED "Converseen")
+set(PROJECT_NAME_CAPITALIZED "LessMB")
 
 option(USE_QT6 "Enable this if you want to use Qt6, instead of Qt5" NO)
 option(MACOS_DEPLOY "Enable this if you want to deploy the program on MacOS" NO)
 
-set(GUI "converseen")
+set(GUI "lessmb")
 set(QT_USE_QTNETWORK TRUE)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -211,7 +211,7 @@ include_directories(
 )
 
 if(APPLE AND MACOS_DEPLOY)
-    set(APP_ICON ${CMAKE_CURRENT_SOURCE_DIR}/res/converseen.icns)
+    set(APP_ICON ${CMAKE_CURRENT_SOURCE_DIR}/res/lessmb.icns)
     set_source_files_properties(${APP_ICON} PROPERTIES
         MACOSX_PACKAGE_LOCATION "Resources"
     )
@@ -269,7 +269,7 @@ if(WIN32)
         ${ImageMagick_EXECUTABLE_DIR}/vc*140.dll
     )
 
-    install(PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/converseen.exe DESTINATION ${CMAKE_INSTALL_BINDIR})
+    install(PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/lessmb.exe DESTINATION ${CMAKE_INSTALL_BINDIR})
     install(FILES ${ImageMagick_DLLs} DESTINATION ${CMAKE_INSTALL_BINDIR})
     install(FILES ${ImageMagick_Filters} DESTINATION ${CMAKE_INSTALL_BINDIR}/modules/filters)
     install(FILES ${ImageMagick_Coders} DESTINATION ${CMAKE_INSTALL_BINDIR}/modules/coders)
@@ -330,9 +330,9 @@ endif()
 	set(CPACK_INCLUDE_TOPLEVEL_DIRECTORY OFF)
 	
     set(CPACK_PACKAGE_VENDOR "Francesco Mondello")
-    set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Converseen the Batch Image Converter and Resizer")
+    set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "LessMB - Batch Image Compression Tool")
     set(CPACK_PACKAGE_VERSION ${PROJECT_VERSION})
-    set(CPACK_PACKAGE_HOMEPAGE_URL "https://converseen.fasterland.net")
+    set(CPACK_PACKAGE_HOMEPAGE_URL "")
     set(CPACK_PACKAGE_CONTACT "Contact Author <faster3ck@gmail.net>")
     set(CPACK_PACKAGE_DESCRIPTION_FILE "${CMAKE_SOURCE_DIR}/COPYING.txt")
     set(CPACK_GENERATOR WIX ZIP)
@@ -344,7 +344,7 @@ endif()
 
 if(WIN32)
     # WIX (Windows .msi installer)
-    set(CPACK_WIX_PRODUCT_ICON "${CMAKE_SOURCE_DIR}/res/converseen.ico")
+    set(CPACK_WIX_PRODUCT_ICON "${CMAKE_SOURCE_DIR}/res/lessmb.ico")
     set(CPACK_WIX_UI_BANNER "${CMAKE_SOURCE_DIR}/package/Windows/wix/CPACK_WIX_UI_BANNER.BMP")
     set(CPACK_WIX_UI_DIALOG "${CMAKE_SOURCE_DIR}/package/Windows/wix/CPACK_WIX_UI_DIALOG.BMP")
     set(CPACK_WIX_PROPERTY_ARPHELPLINK "${CPACK_PACKAGE_HOMEPAGE_URL}")

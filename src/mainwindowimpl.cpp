@@ -1,26 +1,3 @@
-/*
-* This file is part of Converseen, an open-source batch image converter
-* and resizer.
-*
-* (C) Francesco Mondello 2009 - 2026
-*
-* This program is free software: you can redistribute it and/or modify
-* it under the terms of the GNU General Public License as published by
-* the Free Software Foundation, either version 3 of the License, or
-* (at your option) any later version.
-*
-* This program is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-* GNU General Public License for more details.
-*
-* You should have received a copy of the GNU General Public License
-* along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*
-* Contact e-mail: Francesco Mondello <faster3ck@gmail.com>
-*
-*/
-
 #include <QColorDialog>
 #include <QTimer>
 #include <QStyleFactory>
@@ -36,7 +13,6 @@
 #include "inisettings.h"
 #include "sizeutil.h"
 #include "dialogmultipageeditor.h"
-#include "dialogshowupdatemsg.h"
 #include "globals.h"
 
 using namespace Magick;
@@ -50,8 +26,6 @@ MainWindowImpl::MainWindowImpl(QWidget * parent)
     iAList = new QList<ImageAttributes>;
     convertThread = new Converter(this);
     dlgCStatus = new DialogConversionStatus(this);
-    updateChecker = new UpdateChecker();
-
     CachingSystem::init();
 
     connect(treeWidget, SIGNAL(dropped(QStringList, QStringList)), this, SLOT(dropped(QStringList, QStringList)));
@@ -84,8 +58,6 @@ MainWindowImpl::MainWindowImpl(QWidget * parent)
     connect(labelPreview, SIGNAL(previewReady(int, int, double, double)), this, SLOT(showImageInformations(int, int, double, double)));
 
     connect(checkRelative, SIGNAL(stateChanged(int)), this, SLOT(setRelativeSizeCheckboxes(int)));
-    connect(updateChecker, SIGNAL(updateAvailable(bool)), this, SLOT(updateAvailable(bool)));
-
     createActions();
     setupMenu();
 
@@ -116,8 +88,6 @@ MainWindowImpl::MainWindowImpl(QWidget * parent)
         spin_geoWidth->setValue(1);
         spin_geoHeight->setValue(1);
     }
-
-    checkForUpdates();
 
     checkVersion();
 }
@@ -179,10 +149,6 @@ void MainWindowImpl::createActions()
     connect(actionConvert, SIGNAL(triggered()), this, SLOT(elabora()));
 
     connect(actionInfo, SIGNAL(triggered()), this, SLOT(about()));
-    connect(actionDonatePaypal, SIGNAL(triggered()), this, SLOT(openPaypalLink()));
-    connect(actionReportBug, SIGNAL(triggered()), this, SLOT(bugReport()));
-    connect(actionCheckForUpdates, SIGNAL(triggered()), this, SLOT(manualCheckForUpdate()));
-    connect(actionHelp, SIGNAL(triggered()), this, SLOT(onlineHelp()));
 
     // Create first toolbar button
 
@@ -1240,12 +1206,7 @@ void MainWindowImpl::checkVersion()
     int currentVersion = globals::CURRENT_INTERNAL_VERSION;
 
     if (savedVersion < currentVersion) {
-#if (defined(Q_OS_WIN) || defined(Q_OS_MACOS))
-        // Open thank you page
-        QString welcomePage = QString("https://converseen.fasterland.net/thank/");
-		QDesktopServices::openUrl(QUrl(welcomePage, QUrl::TolerantMode));
-#endif
-		IniSettings::setCurrentVersion(currentVersion);
+        IniSettings::setCurrentVersion(currentVersion);
     }
 }
 
@@ -1355,64 +1316,6 @@ QString MainWindowImpl::destinationPath()
         dest = iAList->at(curr_index).path;
 
     return dest;
-}
-
-void MainWindowImpl::openPaypalLink()
-{
-    QDesktopServices::openUrl(QUrl("https://converseen.fasterland.net/donate/", QUrl::TolerantMode));
-}
-
-void MainWindowImpl::checkForUpdates()
-{
-    // Checks for updates at program startup
-    updateChecker->checkForUpdates();
-}
-
-void MainWindowImpl::manualCheckForUpdate()
-{
-    // Checks for updates when manually requested
-    bool update_available = updateChecker->isUpdateAvailable();
-
-    if (update_available) {
-        showUpdateDialog();
-    } else {
-        QString title = QString(tr("No updates available!"));
-        QString text = QString(tr("%1 is already updated to the most recent version."))
-                              .arg(globals::PROGRAM_NAME);
-
-        QMessageBox::information(this, title, text, QMessageBox::Ok, QMessageBox::Ok);
-    }
-}
-
-void MainWindowImpl::updateAvailable(const bool &isAvailable)
-{
-    // Signal received when updates are checked
-    if (isAvailable && IniSettings::isAutoChechUpdates()) {
-        showUpdateDialog();
-    }
-}
-
-void MainWindowImpl::showUpdateDialog()
-{
-    QString caption = QString(tr("New version is available!"));
-    QString message = QString(tr("A new version of %1 is available!\nWould you download it?"))
-                          .arg(globals::PROGRAM_NAME);
-
-    DialogShowUpdateMsg dlg(this, caption, message, IniSettings::isAutoChechUpdates());
-
-    if (dlg.exec()) {
-        QDesktopServices::openUrl(QUrl(DESTINATION_URL, QUrl::TolerantMode));
-    }
-}
-
-void MainWindowImpl::bugReport()
-{
-    QDesktopServices::openUrl(QUrl("https://github.com/Faster3ck/Converseen/issues", QUrl::TolerantMode));
-}
-
-void MainWindowImpl::onlineHelp()
-{
-    QDesktopServices::openUrl(QUrl("https://converseen.fasterland.net/help/", QUrl::TolerantMode));
 }
 
 void MainWindowImpl::setRelativeSizeCheckboxes(int state)

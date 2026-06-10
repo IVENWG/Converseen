@@ -1,4 +1,5 @@
 TEMPLATE = app
+TARGET = lessmb
 QT = gui core network widgets concurrent
 CONFIG += qt \
  release \
@@ -7,7 +8,7 @@ CONFIG += qt \
 win32:CONFIG += entrypoint
 
 macx {
-    ICON = res/converseen.icns
+    ICON = res/lessmb.icns
 }
 
 win32 {

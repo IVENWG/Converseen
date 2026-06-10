@@ -1,27 +1,5 @@
-/*
-* This file is part of Converseen, an open-source batch image converter
-* and resizer.
-*
-* (C) Francesco Mondello 2009 - 2026
-*
-* This program is free software: you can redistribute it and/or modify
-* it under the terms of the GNU General Public License as published by
-* the Free Software Foundation, either version 3 of the License, or
-* (at your option) any later version.
-*
-* This program is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-* GNU General Public License for more details.
-*
-* You should have received a copy of the GNU General Public License
-* along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*
-* Contact e-mail: Francesco Mondello <faster3ck@gmail.com>
-*
-*/
-
 #include <QApplication>
+#include <QIcon>
 #include <QLibraryInfo>
 #include <QDir>
 #include <QCommandLineParser>
@@ -43,7 +21,7 @@ int main(int argc, char ** argv)
 {
 	InitializeMagick(*argv);
 
-    QCoreApplication::setApplicationName("Converseen");
+    QCoreApplication::setApplicationName("LessMB");
     QCoreApplication::setApplicationVersion(globals::VERSION);
 
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
@@ -54,20 +32,21 @@ int main(int argc, char ** argv)
 #endif
 
     QApplication app( argc, argv );
+    app.setWindowIcon(QIcon(":/Images/res/icon.png"));
 
     IniSettings::init();
     QString theme = IniSettings::theme();
     if (theme != "none")
         app.setStyle(QStyleFactory::create(theme));
 
-    app.setDesktopFileName("net.fasterland.converseen");
+    app.setDesktopFileName("lessmb");
 
     QCommandLineOption winMagickPathOption({{"m", "debugMagickWindowsPath"}, "Set the default ImageMagick path on Windows (for debug purpose only!).", "C:\\MagickInstallPath"});
     QCommandLineOption importTxtListOption({{"l", "list"}, "Reads a txt file with a list of files to be imported.", "list.txt"});
     QCommandLineOption printSupportedFormats({{"p", "supported-formats"}, "Prints a list of readable/writable supported formats."});
 
     QCommandLineParser parser;
-    parser.setApplicationDescription("Converseen - The Batch Converter and Resizer");
+    parser.setApplicationDescription("LessMB - Batch Image Compression Tool");
     parser.addHelpOption();
     parser.addVersionOption();
     parser.addOption(winMagickPathOption);
@@ -94,8 +73,6 @@ int main(int argc, char ** argv)
 #endif
 
 #if defined(Q_OS_WIN)
-    // example: --debugMagickWindowsPath "C:\Program Files\ImageMagick-7.1.1-Q16-HDRI"
-
     QString resdir = QApplication::applicationDirPath();
 
     if (parser.isSet(winMagickPathOption))
@@ -108,13 +85,11 @@ int main(int argc, char ** argv)
     qputenv("MAGICK_CODER_FILTER_PATH", resdir.toUtf8() + "\\modules\\filters");
 #endif
 
-    // Default traslations for Qt apps
     QTranslator qtTranslator;
     qtTranslator.load("qt_" + QLocale::system().name(),
         QLibraryInfo::location(QLibraryInfo::TranslationsPath));
     app.installTranslator(&qtTranslator);
 
-    // Converseen translations
     Translator T;
 
     QTranslator *t = T.translation();
@@ -124,12 +99,10 @@ int main(int argc, char ** argv)
 
     MainWindowImpl win;
 
-    // Used in kde context menu
     if (parser.isSet(importTxtListOption)) {
         win.importListFromArgv(parser.value(importTxtListOption));
     }
 
-    // Prints the readable/writable supported formats by IM
     if (parser.isSet(printSupportedFormats)) {
         win.printSupportedFormats();
 

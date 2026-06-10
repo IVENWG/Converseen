@@ -29,7 +29,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Converseen</string>
+   <string>LessMB</string>
   </property>
   <property name="windowIcon">
    <iconset resource="../resources.qrc">
@@ -423,13 +423,6 @@
     <property name="title">
      <string>&amp;Help</string>
     </property>
-    <addaction name="actionHelp"/>
-    <addaction name="separator"/>
-    <addaction name="actionDonatePaypal"/>
-    <addaction name="separator"/>
-    <addaction name="actionCheckForUpdates"/>
-    <addaction name="actionReportBug"/>
-    <addaction name="separator"/>
     <addaction name="actionInfo"/>
    </widget>
    <addaction name="menu_File"/>

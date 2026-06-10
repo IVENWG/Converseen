@@ -1,26 +1,3 @@
-/*
-* This file is part of Converseen, an open-source batch image converter
-* and resizer.
-*
-* (C) Francesco Mondello 2009 - 2026
-*
-* This program is free software: you can redistribute it and/or modify
-* it under the terms of the GNU General Public License as published by
-* the Free Software Foundation, either version 3 of the License, or
-* (at your option) any later version.
-*
-* This program is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-* GNU General Public License for more details.
-*
-* You should have received a copy of the GNU General Public License
-* along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*
-* Contact e-mail: Francesco Mondello <faster3ck@gmail.com>
-*
-*/
-
 #ifndef MAINWINDOWIMPL_H
 #define MAINWINDOWIMPL_H
 
@@ -43,7 +20,6 @@
 #include "pixtreewidget.h"
 #include "mylabelpreviewer.h"
 #include "cachingsystem.h"
-#include "updatechecker.h"
 #include "magickdefine.h"
 
 class QDropEvent;
@@ -83,7 +59,6 @@ private:
     void checkVersion();
 
     void saveSettings();    // This method is called when the program is closed
-    void showUpdateDialog();
 
     QString renameFileNameOnPrefixSuffix(QString oldFileName);
     QString renameFileNameOnProgressiveN(QString oldFileName);
@@ -93,7 +68,6 @@ private:
 
     Converter *convertThread;
     DialogConversionStatus *dlgCStatus;
-    UpdateChecker *updateChecker;
 
     int curr_index;             // Indice dell'immagine che si sta processando dalla lista iAList
 
@@ -164,14 +138,6 @@ private slots:
     void errorMessage(QString err_status);
 
     void choseBackgroundColor();
-
-    void openPaypalLink();
-
-    void checkForUpdates();
-    void manualCheckForUpdate();
-    void updateAvailable(const bool &isAvailable);
-    void bugReport();
-    void onlineHelp();
 
     void setRelativeSizeCheckboxes(int state);
     void setOverwriteStatus();
